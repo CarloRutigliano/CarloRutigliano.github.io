@@ -1,0 +1,59 @@
+.section {
+  width: 100%;
+  height: 100vh;
+}
+.container {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    margin: 0 auto 200px;
+    text-align: center;
+    -webkit-perspective: 1000px;
+    -moz-perspective: 1000px;
+    -o-perspective: 1000px;
+    perspective: 1000px;
+}
+.cube {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transition: -webkit-transform 1s;
+    -moz-transition: -moz-transform 1s;
+    -o-transition: -o-transform 1s;
+    transition: transform 1s;
+}
+.cube figure {
+    display: block;
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    line-height: 200px;
+    font-size: 120px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    overflow: hidden;
+}
+.cube.panels-backface-invisible figure {
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+.cube .front  { background: #000; }
+.cube .back   { background: hsla(  60, 100%, 50%, 1 ); }
+.cube .right  { background: rgba( 136, 146, 191, 1 ); }
+.cube .left   { background: rgba( 248, 220, 61, 1 ); }
+.cube .top    { background: rgba( 33, 117, 154, 1 ); }
+.cube .bottom { background: rgba( 204, 102, 153, 1 ); }
+
+.cube .front  { transform: rotateY(   0deg ) translateZ( 100px ); }
+.cube .back   { transform: rotateX( 180deg ) translateZ( 100px ); }
+.cube .right  { transform: rotateY(  90deg ) translateZ( 100px ); }
+.cube .left   { transform: rotateY( -90deg ) translateZ( 100px ); }
+.cube .top    { transform: rotateX(  90deg ) translateZ( 100px ); }
+.cube .bottom { transform: rotateX( -90deg ) translateZ( 100px ); }
